@@ -1,0 +1,8 @@
+<div *ngIf="debt">
+  <h2>{{ debt.title }}</h2>
+  <p>Monto: {{ debt.amount }}</p>
+  <p>Estado: {{ debt.paid ? 'Pagada' : 'Pendiente' }}</p>
+  <p>Vence: {{ debt.due_date || '-' }}</p>
+  <button *ngIf="!debt.paid" mat-raised-button color="primary" (click)="markPaid()">Marcar como pagada</button>
+  <button mat-button color="warn" (click)="remove()">Eliminar</button>
+</div>

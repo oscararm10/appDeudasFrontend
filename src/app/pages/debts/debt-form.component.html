@@ -1,0 +1,7 @@
+<h2>Nueva Deuda</h2>
+<form (ngSubmit)="save()">
+  <mat-form-field appearance="outline"><input matInput placeholder="Título" [(ngModel)]="debt.title" name="title" required></mat-form-field>
+  <mat-form-field appearance="outline"><input matInput type="number" placeholder="Monto" [(ngModel)]="debt.amount" name="amount" required></mat-form-field>
+  <mat-form-field appearance="outline"><input matInput type="date" placeholder="Fecha límite" [(ngModel)]="debt.due_date" name="due_date"></mat-form-field>
+  <button mat-raised-button color="primary">Guardar</button>
+</form>
