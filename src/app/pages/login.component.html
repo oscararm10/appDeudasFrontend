@@ -1,0 +1,9 @@
+<div class="auth-form">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline"><input matInput placeholder="Email" [(ngModel)]="email" name="email" required></mat-form-field>
+    <mat-form-field appearance="outline"><input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required></mat-form-field>
+    <button mat-raised-button color="primary">Entrar</button>
+    <p>¿No tienes cuenta? <a routerLink="/register">Regístrate</a></p>
+  </form>
+</div>

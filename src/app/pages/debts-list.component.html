@@ -1,0 +1,16 @@
+<div class="debts-header">
+  <h2>Mis Deudas</h2>
+  <mat-button-toggle-group [(ngModel)]="status" (change)="load()">
+    <mat-button-toggle value="all">Todas</mat-button-toggle>
+    <mat-button-toggle value="pending">Pendientes</mat-button-toggle>
+    <mat-button-toggle value="paid">Pagadas</mat-button-toggle>
+  </mat-button-toggle-group>
+  <button mat-raised-button color="accent" routerLink="/debts/new">Nueva deuda</button>
+</div>
+
+<mat-list>
+  <mat-list-item *ngFor="let d of debts" [routerLink]="['/debts', d.id]">
+    <div mat-line>{{ d.title }} — ${{ d.amount }}</div>
+    <div mat-line>{{ d.paid ? 'Pagada' : 'Pendiente' }} | Vence: {{ d.due_date || '-' }}</div>
+  </mat-list-item>
+</mat-list>
